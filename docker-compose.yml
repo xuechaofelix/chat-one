@@ -26,8 +26,8 @@ services:
       - "./nginx/html:/usr/share/nginx/html"
     restart: always
     depends_on:
-      - new-api
-        condition:service_healthy
+      new-api:
+        condition: service_healthy
     networks:
       - customer-network
   new-api:
